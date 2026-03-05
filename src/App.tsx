@@ -18,7 +18,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/v0_rpg">
         <Routes>
           <Route path="/" element={<MapView />} />
           <Route path="/quest/:id" element={<QuestDetail />} />
