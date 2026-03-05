@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 25% 6%;
+    --foreground: 180 100% 95%;
+
+    --card: 220 20% 10%;
+    --card-foreground: 180 100% 95%;
+
+    --popover: 220 20% 10%;
+    --popover-foreground: 180 100% 95%;
+
+    --primary: 170 100% 50%;
+    --primary-foreground: 220 25% 6%;
+
+    --secondary: 280 100% 65%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 15% 18%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 45 100% 55%;
+    --accent-foreground: 220 25% 6%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 170 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Game-specific tokens */
+    --neon-glow: 170 100% 50%;
+    --neon-purple: 280 100% 65%;
+    --xp-gold: 45 100% 55%;
+    --health-green: 145 80% 45%;
+    --energy-blue: 200 100% 55%;
+
+    --sidebar-background: 220 25% 8%;
+    --sidebar-foreground: 180 100% 95%;
+    --sidebar-primary: 170 100% 50%;
+    --sidebar-primary-foreground: 220 25% 6%;
+    --sidebar-accent: 220 15% 15%;
+    --sidebar-accent-foreground: 180 100% 95%;
+    --sidebar-border: 220 15% 20%;
+    --sidebar-ring: 170 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Orbitron', sans-serif;
+  }
+
+  .font-body {
+    font-family: 'Rajdhani', sans-serif;
+  }
+
+  .neon-text {
+    color: hsl(var(--primary));
+    text-shadow: 
+      0 0 7px hsl(var(--primary) / 0.8),
+      0 0 20px hsl(var(--primary) / 0.4),
+      0 0 40px hsl(var(--primary) / 0.2);
+  }
+
+  .neon-text-purple {
+    color: hsl(var(--secondary));
+    text-shadow: 
+      0 0 7px hsl(var(--secondary) / 0.8),
+      0 0 20px hsl(var(--secondary) / 0.4);
+  }
+
+  .neon-text-gold {
+    color: hsl(var(--accent));
+    text-shadow: 
+      0 0 7px hsl(var(--accent) / 0.8),
+      0 0 20px hsl(var(--accent) / 0.4);
+  }
+
+  .neon-border {
+    border-color: hsl(var(--primary) / 0.5);
+    box-shadow: 
+      0 0 8px hsl(var(--primary) / 0.3),
+      inset 0 0 8px hsl(var(--primary) / 0.1);
+  }
+
+  .glass-panel {
+    background: hsl(var(--background) / 0.75);
+    backdrop-filter: blur(16px);
+    border: 1px solid hsl(var(--primary) / 0.15);
+  }
+
+  .glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+
+  .radar-sweep {
+    animation: radar-sweep 3s linear infinite;
+  }
+
+  .float-up {
+    animation: float-up 3s ease-in-out infinite;
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 8px hsl(var(--primary) / 0.4), 0 0 20px hsl(var(--primary) / 0.2);
+  }
+  50% {
+    box-shadow: 0 0 16px hsl(var(--primary) / 0.7), 0 0 40px hsl(var(--primary) / 0.35);
+  }
+}
+
+@keyframes radar-sweep {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes float-up {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
