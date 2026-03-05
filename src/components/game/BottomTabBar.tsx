@@ -13,8 +13,14 @@ const BottomTabBar = () => {
   const location = useLocation();
 
   return (
-    <div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 z-50" style={{ width: "min(100%, 28rem)" }}>
-      <div className="w-full pb-1 pt-1.5 flex justify-around items-center rounded-t-xl shadow-md" style={{ background: "rgba(255,255,255,1)", overflow: "hidden" }}>
+    <div
+      className="fixed bottom-0 left-1/2 transform -translate-x-1/2 z-50"
+      style={{ width: "min(100%, 28rem)" }}
+    >
+      <div
+        className="w-full pb-1 pt-1.5 flex justify-around items-center shadow-md"
+        style={{ background: "rgba(255,255,255,1)", overflow: "hidden" }}
+      >
         {tabs.map((tab) => {
           const active = location.pathname === tab.to;
           return (
@@ -31,10 +37,12 @@ const BottomTabBar = () => {
                   transition={{ type: "spring", stiffness: 400, damping: 30 }}
                 />
               )}
+
               <tab.icon
                 size={20}
                 className={active ? "text-primary" : "text-muted-foreground"}
               />
+
               <span
                 className={`text-[10px] font-display font-bold tracking-wider ${
                   active ? "text-primary" : "text-muted-foreground"
