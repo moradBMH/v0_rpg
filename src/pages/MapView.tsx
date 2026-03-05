@@ -28,18 +28,6 @@ const MapView = () => {
           animate={{ scale: 1 }}
           transition={{ duration: 2, ease: "easeOut" }}
         />
-        {/* Dark overlays for readability */}
-        <div className="absolute inset-0 bg-background/40" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-transparent to-background/90" />
-        {/* Grid overlay for cyberpunk feel */}
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "linear-gradient(hsl(var(--primary) / 0.3) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary) / 0.3) 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
-          }}
-        />
       </div>
 
       {/* Exploration zone circles */}
