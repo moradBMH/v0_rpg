@@ -38,8 +38,8 @@ const NearbyQuestsSheet = ({ quests, onSelectQuest }: Props) => {
 
       {/* Content */}
       <div
-        className="glass-panel border-t border-primary/20 px-4 py-3 space-y-2 overflow-y-auto"
-        style={{ maxHeight: expanded ? "320px" : "140px" }}
+        className="border-t border-primary/20 px-4 py-3 space-y-2 overflow-y-auto"
+        style={{ maxHeight: expanded ? "320px" : "140px", background: "rgba(255,255,255,1)" }}
       >
         {quests.map((quest) => (
           <motion.button
