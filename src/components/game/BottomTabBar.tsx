@@ -13,7 +13,7 @@ const BottomTabBar = () => {
   const location = useLocation();
 
   return (
-    <div className="absolute bottom-0 left-0 right-0 z-50">
+    <div className="fixed bottom-0 left-0 right-0 z-50">
       <div className="border-t border-primary/15 px-2 pb-1 pt-1.5 flex justify-around items-center" style={{ background: "rgba(255,255,255,1)" }}>
         {tabs.map((tab) => {
           const active = location.pathname === tab.to;
