@@ -22,7 +22,8 @@ const NearbyQuestsSheet = ({ quests, onSelectQuest }: Props) => {
       {/* Handle */}
       <button
         onClick={() => setExpanded(!expanded)}
-        className="mx-auto flex items-center gap-2 px-4 py-2 rounded-t-xl glass-panel border border-b-0 border-primary/20"
+        className="mx-auto flex items-center gap-2 px-4 py-2 rounded-t-xl border border-b-0 border-primary/20"
+        style={{ background: "rgba(255,255,255,1)" }}
       >
         <motion.div animate={{ rotate: expanded ? 180 : 0 }}>
           <ChevronUp size={16} className="text-primary" />
